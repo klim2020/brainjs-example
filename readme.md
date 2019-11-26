@@ -1,4 +1,4 @@
-**example of BrainJS 
+*example of BrainJS 
 
 little wrapped with *materialize css 
 
