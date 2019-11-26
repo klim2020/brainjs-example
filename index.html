@@ -194,9 +194,26 @@
 					ctx.moveTo(e.offsetX, e.offsetY);
 				}
 			}
+			function handlermove2(e) {
+    			
+					ctx.fillStyle = 'red';
+					ctx.strokeStyle = 'red';
+					ctx.lineWidth = pixel;
+
+					ctx.lineTo(e.offsetX, e.offsetY);
+					ctx.stroke();
+
+					ctx.beginPath();
+					ctx.arc(e.offsetX, e.offsetY, pixel / 2, 0, Math.PI * 2);
+					ctx.fill();
+
+					ctx.beginPath();
+					ctx.moveTo(e.offsetX, e.offsetY);
+				
+			}
 
 			el.addEventListener('mousemove', handlermove);
-			el.addEventListener('touchmove', handlermove);
+			el.addEventListener('touchmove', handlermove2);
 		}
 
 		let vector = [];
