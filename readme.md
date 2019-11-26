@@ -1,6 +1,6 @@
-*example of BrainJS 
+*example for BrainJS  library
 
-little wrapped with *materialize css 
+little decorated with *materialize css 
 
 
 original  https://paste.ubuntu.com/p/m9N8KPvmyc/
