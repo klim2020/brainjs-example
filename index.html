@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,user-scalable=no">
+
 	<title>BrainJS Example</title>
 
 	<script src="brain-browser.min.js"></script>
@@ -164,13 +164,20 @@
 				is_mouse_down = true;
 				ctx.beginPath();
 			})
+			el.addEventListener('touchstart', function(e) {
+				is_mouse_down = true;
+				ctx.beginPath();
+			})
 
 			el.addEventListener('mouseup', function(e) {
 				is_mouse_down = false;
 			})
+			el.addEventListener('touchend', function(e) {
+				is_mouse_down = false;
+			})
 
-			el.addEventListener('mousemove', function(e) {
-				if( is_mouse_down )
+			function handlermove(e) {
+    			if( is_mouse_down )
 				{
 					ctx.fillStyle = 'red';
 					ctx.strokeStyle = 'red';
@@ -186,7 +193,10 @@
 					ctx.beginPath();
 					ctx.moveTo(e.offsetX, e.offsetY);
 				}
-			})
+			}
+
+			el.addEventListener('mousemove', handlermove);
+			el.addEventListener('touchmove', handlermove);
 		}
 
 		let vector = [];
