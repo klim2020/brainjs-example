@@ -266,10 +266,14 @@
 		});
 
 		document.querySelector("#addcheckuncheck").addEventListener('click',function(){
+			train_data = '';
 			train_data = checkuncheck();
+			alert('checkdata added');
 		});
 		document.querySelector("#addtrainsmile").addEventListener('click',function(){
+			train_data = '';
 			train_data = sadsmiley();
+			alert('smiledata added');
 		});
 
 		document.addEventListener('keypress', function(e) {
